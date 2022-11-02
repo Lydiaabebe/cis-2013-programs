@@ -89,7 +89,7 @@ function triPerim (floatSide1, floatSide2, floatSide3)
 
 var calcCircleArea = function()
 {
-    var floatRadius = parsePloat($("radius").value);
+    var floatRadius = parseFloat($("radius").value);
     alert ("The Circle Area is" + circleArea(floatRadius));
 }
 function circleArea (floatRadius)
