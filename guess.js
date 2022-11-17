@@ -6,27 +6,27 @@
 
 var intMax, intMin, intGuess, intRandom, intCount;
 
-intMin = parseInt(prompt("Choose a number reater than 0 for the minimum number"));
-while (isNaN(intMin)|| intMin<0)
+intMin = parseInt(prompt("Choose a number greater than 0 for the minimum number"));
+while (isNaN(intMin)||intMin<0)
 {
     intMin = parseInt(prompt("Opps!! You need to guess a number above 0. Try again"));
 }
 
 intMax = parseInt(prompt("Choose the maximum number at lease two units greater than the minimum number you chose "));
-while (isNaN(intMax)|| intMax <= intMin +2)
+while (isNaN(intMax)|| intMax <= (intMin +2))
 {
     intMax = parseInt(prompt("Opps!! You need to guess a number above 2. Try again"));
 }
 
 intGuess = parseInt(prompt("please enter a number between the minimum and maximum number you chose"));
-while (isNaN(intGuess)|| intGuess <= intMin & intGuess >= intMax)
+while (isNaN(intGuess)||intGuess < intMin||intGuess > intMax)
 {
     intMax = parseInt(prompt("Please enter a number between the minimum and maximum number you chose."));
 }
 //new version 
     intRandom = parseInt( Math.floor(Math.random()*(intMax-intMin+1))+ intMin);
     intCount = 1
-    while (intGuess != intRandom) //this while will count the number of times the person guesses wrong
+    while (intGuess != intRandom)       //this while will count the number of times the person guesses wrong
     {
         if(intGuess < intRandom) 
         {
@@ -50,16 +50,15 @@ while (isNaN(intGuess)|| intGuess <= intMin & intGuess >= intMax)
 		" and it only took you " + intCount + " attempts!");
 
 
- * The user's guess is compared to the randomly generated number and feedback
- * is given based upon whether the guess is higher or lower. The loop exits when
- * the user chooses the correct number. Each time through the loop updates the loop counter.
- */
 
 
 
 // calculate intRandom by generating a random number and making sure it falls between intMin and intMax ... set intCount = 1
-/*
 
+
+
+
+/*
 intRandom = parseInt( Math.floor(Math.random()*(intMax-intMin+1))+ intMin);
 intCount = 1
 
@@ -89,8 +88,11 @@ while (intGuess !== intRandom)
        }
     
     }
+    alert("Congratulations!!! You guessed the correct number (" + intRandom +")\n" +
+    " and it only took you " + intCount + " attempts!");
+*/
 
-    */
+
  
 
 
