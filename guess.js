@@ -21,7 +21,7 @@ while (isNaN(intMax)|| intMax <= (intMin +2))
 intGuess = parseInt(prompt("please enter a number between the minimum and maximum number you chose"));
 while (isNaN(intGuess)||intGuess < intMin||intGuess > intMax)
 {
-    intMax = parseInt(prompt("Please enter a number between the minimum and maximum number you chose."));
+    intGuess = parseInt(prompt("Please enter a number between the minimum and maximum number you chose."));
 }
 //new version 
     intRandom = parseInt( Math.floor(Math.random()*(intMax-intMin+1))+ intMin);
@@ -41,7 +41,7 @@ while (isNaN(intGuess)||intGuess < intMin||intGuess > intMax)
             intGuess = parseInt(prompt("Your guess of" + intGuess + "is too high. Please guess again."));
             while (isNaN(intGuess)||intGuess < intMax||  intGuess > intMax )
             {
-                intGuess = parseInt(prompt("Sorry, you need to choose a number between" + intMax + "and" + intMax));
+                intGuess = parseInt(prompt("Sorry, you need to choose a number between" + intMin + "and" + intMax));
             }
         }
         intCount++;
