@@ -35,7 +35,7 @@ else
 
 window.onload = function ()
 {
-$("toatal_fib").value = "";
+$("total_fib").value ="";
 $("output").value ="";
 $("generate").onclick = generate;
 };
