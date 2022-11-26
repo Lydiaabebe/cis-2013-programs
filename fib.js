@@ -7,7 +7,7 @@ var $ = function (id)
 var generate = function () 
 {
 	var intCount = parseInt($("total_fib").value); //what is this doing?: taking total_fib from HTML and moving it to the JS intCount variable?
-    if(isNaN(intCount)|| intCount < 2 || intCount < 100)
+    if(isNaN(intCount)|| intCount < 2 || intCount > 100)
     {
         alert("please only enter a number between 2 and 100");
         $("total_fib").value = "";  // blank out the DOM input box associated with intAmount ("total_fib")
