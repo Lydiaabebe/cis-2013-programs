@@ -13,36 +13,75 @@ var passwordCheckOld = function ()
     
     stringOutput = "";
  
-  //check if the message is less than the 8 chaecters
-if (stringPassword < 8)
-{
-    stringOutput = "Please make sure your password has at lease 8 charectors.";
-}
+    // initialize for loop, go through array.... What does it mean to initailaize a loop? : 
 
-    else  //create a for loop hat will check the passward (use a for loop)
+    for (var count = 0; count <= arrayBadPasswords.length; count++) 
     {
-        for ( var intCount =0; intCount < arrayBadPassword.length; intCount++)
+        // check against list of banned passwords
+        if (arrayBadPasswords.includes(stringPassword)) 
+        {
+            stringOutput = "This is not a good password... please enter a more unique password!"
+        } else 
+        {
+            // check required length
+            if (stringPassword.length < 8) 
             {
-                if (stringPassword === arrayBadPasswords[intCount]) //tests to make sure the passward is matching the elemnt of the array being tested
-                  {
-                    stringOutput = "Sorry, the password" + stringPassword + "is not a good password. Please enter a new password to check.";
-                     $("output").value = stringOutput; // take the string Output message and takes it to the output box in html DOM
-                    $("password").value =""; //blank out html DOM input box 
-                      break;  //creates a break... breaks out of the program 
-                  }
-
-                else 
-                 {
-                    stringOutput = "Congratulations! The password" + stringPassword + "is not a good password.";
-                    $("output").value = stringOutput;    //take the valule from java and put it into html
-                 }
+                stringOutput = "This is a bad password. Why? it is does not have charectors larger than 8. Please enter a passwork with 8 charectors or more."
+            } else 
+            {
+                stringOutput = "Yay!! You have a good password!"
             }
+        }
+        // send value to HTML
+        $("output").value = stringOutput
     }
 };
 
-window.onload = function () 
-{
-   $("password").value = "";
-   $("password").focus();
-   $("check_password").onclick = passwordCheckOld;
+window.onload = function () {
+    $("password").value = "";
+    $("password").focus();
+    $("check_password").onclick = passwordCheckOld;
 };
+
+
+
+
+
+
+
+
+
+
+
+    /*
+
+
+//check if the message is less than the 8 chaecters
+ if (stringPassword < 8)
+ {
+     stringOutput = "Please make sure your password has at lease 8 charectors.";
+ }
+ 
+     else  //create a for loop that will check the passward (use a for loop)
+     {
+         for ( var intCount =0; intCount < arrayBadPassword.length; intCount++)
+             {
+                 if (stringPassword === arrayBadPasswords[intCount]) //tests to make sure the passward is matching the elemnt of the array being tested
+                   {
+                     stringOutput = "Sorry, the password" + stringPassword + "is not a good password. Please enter a new password to check.";
+                      $("output").value = stringOutput; // take the string Output message and takes it to the output box in html DOM
+                     $("password").value =""; //blank out html DOM input box 
+                       break;  //creates a break... breaks out of the program 
+                   }
+ 
+                 else 
+                  {
+                     stringOutput = "Congratulations! The password" + stringPassword + "is not a good password.";
+                     $("output").value = stringOutput;    //take the valule from java and put it into html
+                  }
+             }
+     }
+ };
+ 
+ 
+     */
