@@ -13,18 +13,18 @@ var passwordCheckOld = function ()
     
     stringOutput = "";
  
-    // initialize for loop, go through array.... What does it mean to initailaize a loop? : 
+    
 
-    for (var count = 0; count <= arrayBadPasswords.length; count++) 
+    for (var count = 0; count <= arrayBadPasswords.length; count++) // initialize for loop, go through array.... 
     {
-        // check against list of banned passwords
+        // check against list of bad passwords
         if (arrayBadPasswords.includes(stringPassword)) 
         {
             stringOutput = "This is not a good password... please enter a more unique password!"
         } else 
         {
-            // check required length
-            if (stringPassword.length < 8) 
+            
+            if (stringPassword.length < 8) // checks to make sure the length of the pasword is greaer than 8 
             {
                 stringOutput = "This is a bad password. Why? it is does not have charectors larger than 8. Please enter a passwork with 8 charectors or more."
             } else 
@@ -32,8 +32,8 @@ var passwordCheckOld = function ()
                 stringOutput = "Yay!! You have a good password!"
             }
         }
-        // send value to HTML
-        $("output").value = stringOutput
+        
+        $("output").value = stringOutput // send the java (stringOutput) message back to HTML
     }
 };
 
