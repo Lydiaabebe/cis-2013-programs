@@ -18,24 +18,26 @@ if (stringPassword < 8)
 {
     stringOutput = "Please make sure your password has at lease 8 charectors.";
 }
-else  //create a for loop hat will check the passward (use a for loop)
-for ( var intCount =0; intCount < arrayBadPassword.length; intCount++)
 
-      if (stringPassword === arrayBadPasswords[intCount]) //tests to make sure the passward is matching the elemnt of the array being tested
-          {
-            stringOutput = "Sorry, the password" + stringPassword + "is not a good password. Please enter a new password to check.";
-            $("output").value = stringOutput; // take the string Output message and takes it to the output box in html DOM
-            $("password").value =""; //blank out html DOM input box 
-            break;  //creates a break... breaks out of the program 
-          }
+    else  //create a for loop hat will check the passward (use a for loop)
+    {
+        for ( var intCount =0; intCount < arrayBadPassword.length; intCount++)
+            {
+                if (stringPassword === arrayBadPasswords[intCount]) //tests to make sure the passward is matching the elemnt of the array being tested
+                  {
+                    stringOutput = "Sorry, the password" + stringPassword + "is not a good password. Please enter a new password to check.";
+                     $("output").value = stringOutput; // take the string Output message and takes it to the output box in html DOM
+                    $("password").value =""; //blank out html DOM input box 
+                      break;  //creates a break... breaks out of the program 
+                  }
 
-          else 
-        {
-           stringOutput = "Congratulations! The password" + stringPassword + "is not a good password.";
-            $("output").value = stringOutput;    //take the valule from java and put it into html
-            
-
-        }
+                else 
+                 {
+                    stringOutput = "Congratulations! The password" + stringPassword + "is not a good password.";
+                    $("output").value = stringOutput;    //take the valule from java and put it into html
+                 }
+            }
+    }
 };
 
 window.onload = function () 
