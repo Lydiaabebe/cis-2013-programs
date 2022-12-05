@@ -61,7 +61,7 @@ else
                     break;
         }
     }
-    $("output").value = "Theere are" + intConsonants+ " consonants in the above phrase";
+    $("output").value = "Theere are" + " " + intConsonants+ " " + " consonants in the above phrase";
                 
 }
 }
