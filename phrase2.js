@@ -26,7 +26,7 @@ var vowels = function ()
                  intVowel++; // if it is one of the letters you count it 
              }
        }
-           $("output").value = "There are" + intVowel + "vowels in what you entered";
+           $("output").value = "There are" + " " + intVowel + " " + "vowels in what you entered";
     }   
 }
 
