@@ -6,8 +6,8 @@ var $ = function (id)
 var calculateIncome = function () 
 {
     var floatAnnualIncome = parseFloat($("annualIncome").value);
-    var intUserAge = parseInt($("userAge").value);
-    var floatTaxRate, floatAnnualTax;
+    var intUserAge = parseInt($("age").value); //take value from html and put it in js variable...intUserAge
+    var floatTaxRate;
     if (intUserAge >= 65)
     {
     	if (floatAnnualIncome <= 30000)
@@ -18,11 +18,11 @@ var calculateIncome = function ()
     	{
     		if(floatAnnualIncome >= 30000 && floatAnnualIncome <= 75000)
     		{
-    			floatTaxRate = 5;
+    			floatTaxRate = .05;
     		}
     		else
     		{
-    			floatTaxRate = 20;
+    			floatTaxRate = .2;
             }
     	}
     } 
@@ -31,28 +31,28 @@ var calculateIncome = function ()
     {
     	if (floatAnnualIncome <= 30000)
     	{
-    	floatTaxRate = 5;
+    	floatTaxRate = .05;
     	}
-   	    if (floatAnnualIncome >= 30000 && floatAnnualIncome <= 75000)
-   		{
-   		floatTaxRate = 10;
-   		}
-   		else
-   		{
-   			floatTaxRate = 20;
-   		}
-	   }
-    }
+   	      if (floatAnnualIncome >= 30000 && floatAnnualIncome <= 75000)
+   		   {
+   		    floatTaxRate = .1;
+   		   }
+   		     else
+   		    {
+   			  floatTaxRate = .2;
+   		    }
+	}
+    
 
 
-	floatAnnualTax = intAnnualIncome * (floatTaxRate/100);
+	var floatAnnualTax = floatAnnualIncome * floatTaxRate;
 
-	$("annualTax").value = floatAnunalTax;
+	$("annualTax").value = floatAnnualTax;
 
 
-	alert ("Your annual income tax this year is $" + floatAnnualTax  +"\nBased upon an annual income of $"+ intAnnualIncome+
+	alert ("Your annual income tax this year is $" +  floatAnnualTax  +"\nBased upon an annual income of $"+ floatAnnualIncome+
 	"\nAnd a tax rate of " +floatTaxRate+ "% \nNote: Tax rate is based upon your age");	
-
+};
 
 window.onload = function () 
 {
