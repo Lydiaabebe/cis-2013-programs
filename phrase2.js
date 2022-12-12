@@ -6,7 +6,6 @@ var $ = function (id)
 }
 
 var vowels = function () 
-
 //use swith statement: 
 {
     var stringEntry = $("phrase").value; //dom input 
@@ -33,7 +32,6 @@ var vowels = function ()
 
 
 var consonants = function () 
-
 {
 var stringEntry = $("phrase").value; //dom input 
 stringEntry = stringEntry.toLowerCase(); //is this the line that makes the vowels into a capital case? 
