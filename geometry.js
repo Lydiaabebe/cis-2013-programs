@@ -105,8 +105,6 @@ function circleArea (floatRadius)
  * is clicked.  It reads the radius information from the DOM and then reports the circle
  * circumference in an alert box, using the circleCircum function to perform the calculation
  */
-
-
 var calcCircleCircum = function()
 {
 	var floatRadius = parseFloat($("radius").value);
@@ -125,8 +123,6 @@ function circleCircum(floatRadius_par)
 	var floatCircum = parseFloat (2 * Math.PI * floatRadius_par);
 	return floatCircum.toFixed(2);
 }
-
-
 window.onload = function () 
 {
     //lines 51-56 clear the DOM values..
